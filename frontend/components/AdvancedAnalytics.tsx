@@ -4,7 +4,7 @@ import {
   Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell, RadarChart, 
   PolarGrid, PolarAngleAxis, PolarRadiusAxis, ScatterChart, Scatter
 } from 'recharts';
-import { Calendar, TrendingUp, Brain, Clock, Target, Flame, Trophy, AlertCircle, Zap, BookOpen } from 'lucide-react';
+import { Calendar, TrendingUp, Brain, Clock, Target, Flame, Trophy, AlertCircle, Zap, BookOpen, Radar } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
