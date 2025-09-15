@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Brain, GitBranch, BarChart3, FileText, Target, Repeat, Calendar, Scroll, Zap, Download } from 'lucide-react';
+import { ArrowLeft, BookOpen, Brain, GitBranch, BarChart3, FileText, Target, Repeat, Calendar, Scroll, Zap, Download, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -9,6 +9,7 @@ import FlashcardViewer from './FlashcardViewer';
 import QuizViewer from './QuizViewer';
 import MindMapViewer from './MindMapViewer';
 import StudyAnalytics from './StudyAnalytics';
+import AdvancedAnalytics from './AdvancedAnalytics';
 import SummaryViewer from './SummaryViewer';
 import DragAndForgeViewer from './DragAndForgeViewer';
 import SpacedRepetitionViewer from './SpacedRepetitionViewer';
@@ -105,7 +106,7 @@ export default function StudyPackDetail() {
 
       {/* Study Modes */}
       <Tabs value={activeTab} onValueChange={setActiveTab}>
-        <TabsList className="grid w-full grid-cols-9">
+        <TabsList className="grid w-full grid-cols-10">
           <TabsTrigger value="ai-plan" className="flex items-center space-x-2">
             <Zap className="h-4 w-4" />
             <span>AI Plan</span>
@@ -141,6 +142,10 @@ export default function StudyPackDetail() {
           <TabsTrigger value="analytics" className="flex items-center space-x-2">
             <BarChart3 className="h-4 w-4" />
             <span>Analytics</span>
+          </TabsTrigger>
+          <TabsTrigger value="advanced-analytics" className="flex items-center space-x-2">
+            <TrendingUp className="h-4 w-4" />
+            <span>Advanced</span>
           </TabsTrigger>
         </TabsList>
 
@@ -182,6 +187,10 @@ export default function StudyPackDetail() {
 
         <TabsContent value="analytics" className="mt-6">
           <StudyAnalytics studyPackId={studyPack.id} studyPack={studyPack} />
+        </TabsContent>
+
+        <TabsContent value="advanced-analytics" className="mt-6">
+          <AdvancedAnalytics studyPackId={studyPack.id} studyPack={studyPack} />
         </TabsContent>
       </Tabs>
 
